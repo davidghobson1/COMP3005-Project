@@ -309,7 +309,8 @@ function placeOrder(req, res, next){
 		//send back the users order number
 		db.many(query2 + ' RETURNING sale_id;')
 		.then(data2 => {
-		    res.writeHead(200, { 'Content-Type': 'text/html' });
+			basket = {};
+			res.writeHead(200, { 'Content-Type': 'text/html' });
 			res.end(JSON.stringify(data.order_number));
 		})
 		.catch(error => {
