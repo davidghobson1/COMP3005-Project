@@ -23,6 +23,8 @@ FROM book
 WHERE LOWER(title) = LOWER($1) 
 ORDER BY book_id ASC;
 
+-- or analogous for author, genre, isbn
+
 -----------------------------------------------------------------------------------------------------------
 -- 2) Displaying book information
 --
