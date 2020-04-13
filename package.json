@@ -1,0 +1,30 @@
+{
+  "name": "comp3005_project",
+  "version": "1.0.0",
+  "description": "Web-based bookstore application using Express and PostgreSQL",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pg-promise": "^10.5.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhobso/COMP3005-Project.git"
+  },
+  "keywords": [
+    "COMP3005",
+    "Project"
+  ],
+  "author": "David Hobson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhobso/COMP3005-Project/issues"
+  },
+  "homepage": "https://github.com/dhobso/COMP3005-Project#readme"
+}
