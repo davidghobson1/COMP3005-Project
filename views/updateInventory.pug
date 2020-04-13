@@ -1,0 +1,99 @@
+html
+	head
+		title Update Inventory
+
+	body
+		h1 Update Inventory
+
+		h2 Add a Book to Inventory
+
+		div Please enter the book's information
+
+		br
+
+		div Title:
+			input#title(type="text")
+
+		br
+
+		div Author:
+			input#author(type="text")
+
+		br
+
+		div Genre:
+			input#genre(type="text")
+
+		br
+
+		div ISBN:
+			input#isbn(type="text")
+
+		br
+
+		div Description:
+			input#description(type="text")
+
+		br
+
+		div Publisher Name:
+			input#publisher_name(type="text")
+
+		br
+		br
+
+		div Price:
+			input#price(type="text")
+
+		br
+
+		div Number of pages:
+			input#num_pages(type="text")
+
+		br
+
+		div Percentage of sales to publisher:
+			input#publishers_percentage(type="text")
+
+		br
+
+		div Publisher's base price:
+			input#publishers_price(type="text")
+
+		br
+		br
+
+		div Stock:
+			input#stock(type="text")
+
+		br
+
+		button#addbook(type="button" onclick="addBook()") Add Book
+
+		br
+
+		h2 Remove Book
+
+		p Search for book to remove from the inventory
+
+		p
+			select#searchCategory
+				option Title
+				option Author
+				option Genre 
+				option ISBN
+				option Vendor ID
+			input#searchbar(type="text")
+			button#searchButton(type="button" onclick="searchBooksToRemove()") Search
+
+		h2#matchingBooksHeader(hidden="true") Matching Books
+
+		div#books
+
+		br
+
+		button#removeBook(type="button" onclick="removeBook()" hidden="true") Remove Book
+		
+		br
+
+		script(src="/bookstoreClient.js")

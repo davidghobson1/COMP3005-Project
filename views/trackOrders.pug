@@ -1,0 +1,35 @@
+html
+	head
+		title Track your Order
+
+	body
+		h1 Track your Order
+
+		div Please enter your username, password, and order number
+
+		br
+
+		div Username:
+			input#username(type="text")
+
+		br
+
+		div Password:
+			input#password(type="text")
+
+		br
+
+		div Order Number:
+			input#order_number(type="text")
+
+		br
+
+		button#login(type="button" onclick="trackOrderLogin()") Track My Order!
+
+		br
+
+		h2#yourOrdersHeader(hidden="true") Your Orders
+
+		div#order(hidden="true")
+
+		script(src="/bookstoreClient.js")

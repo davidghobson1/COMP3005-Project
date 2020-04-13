@@ -1,0 +1,61 @@
+if user.length != 0
+
+	h2 Logged In!
+
+	-let u = user[0];
+	
+	div #{u.first_name + " " + u.last_name}
+
+	div #{u.email}
+
+	div#user_id(hidden="true") #{u.user_id}
+
+	br
+
+	div Please confirm your information!
+
+	h2 Shipping Information
+
+	if u.apt_number
+		div Apartment Number:
+		-let apt_number = u.apt_number
+		input#streetnumber(type="text" value=apt_number)
+
+	div Address:
+		-let street_number = u.street_number
+		input#street_number(type="text" value=street_number)
+		-let street_name = u.street_name
+		input#street_name(type="text" value=street_name)
+
+	div City:
+		-let city = u.city
+		input#city(type="text" value=city)
+
+	div Province:
+		-let province = u.province
+		input#province(type="text" value=province)
+
+	div Postal Code:
+		-let postal_code = u.postal_code
+		input#postal_code(type="text" value=postal_code)
+
+	h2 Billing Information
+
+	div Credit Card Number:
+		-let credit_card_number = u.credit_card_number
+		input#credit_card_number(type="text" value=credit_card_number)
+
+	div Expiration Date:
+		-let exp_date = u.exp_date
+		input#exp_date(type="text" value=exp_date)
+
+	br
+
+	button(type="button" onclick="submitOrder()") Submit Order!
+
+	script(src="/bookstoreClient.js")
+
+else
+	div Sorry, username or password was not found!
+
+

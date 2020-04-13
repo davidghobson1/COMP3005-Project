@@ -1,0 +1,67 @@
+h2 #{title}
+
+p#book(style="font-size:20px;font-weight:bold;") !{book}
+
+-let discontinued = (stock == null)
+
+p#author
+	u by
+	span : #{author}
+
+div#price
+	u Price
+	span : #{price}
+
+div#stock
+	u Stock
+	if discontinued
+		span : Discontinued
+	else
+		span : #{stock}
+
+div#description
+	u Description
+	span : #{description}
+
+br
+if !discontinued
+	p
+		- let j = 1;
+		select#quantity
+			- let max = parseInt(stock) + 1;
+			while (j < 51 && j < max)
+				option=j
+				- j++
+		button(type="button" onclick="addToBasketBook()") Add to Basket!
+
+br
+
+div#genre
+	u Genre
+	span : #{genre}
+
+div#num_pages
+	u Number of pages
+	span : #{num_pages}
+
+br
+
+div#publisher
+	u Publisher
+	span : #{publisher_name}
+
+div#isbn
+	u ISBN
+	span : #{isbn}
+
+div#bookid
+	u Vendor ID
+	span : 
+	span 
+	span#bookID #{book_id}
+
+br
+br
+button(type="button" onclick="viewBasket()") View Basket
+
+script(src="/bookstoreClient.js")

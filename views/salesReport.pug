@@ -1,0 +1,13 @@
+if data.length != 0
+	Table(width="500" border="1")
+		tr
+			th #{category}
+			th Sales
+			th Number of Books Sold
+		each dataObj in data
+			tr
+				td(style="text-align:center") #{dataObj.category}
+				td(style="text-align:center") #{dataObj.total_sales}
+				td(style="text-align:center") #{dataObj.number_of_books_sold}
+else
+	div No report available!

@@ -1,0 +1,56 @@
+html
+	head
+		title Sales Reports
+
+	body
+		h1 Sales Reports
+
+		h2 Summary of Sales and Expenditures
+
+		div#salesSummary
+			if data.length != 0
+				Table(width="800" border="1")
+					tr
+						th Month
+						th Gross Sales
+						th Fees to Publishers
+						th Store Order Costs
+						th Net Revenue
+					each dataObj in data
+						tr
+							td(style="text-align:center") #{dataObj.month}
+							if dataObj.gross_revenue == null
+								td(style="text-align:center") 0
+							else
+								td(style="text-align:center") #{dataObj.gross_revenue}
+							if dataObj.fees_to_publishers == null
+								td(style="text-align:center") 0
+							else
+								td(style="text-align:center") #{dataObj.fees_to_publishers}
+							if dataObj.store_order_costs == null
+								td(style="text-align:center") 0
+							else
+								td(style="text-align:center") #{dataObj.store_order_costs}
+							if dataObj.net_revenue == null
+								td(style="text-align:center") 0
+							else
+								td(style="text-align:center") #{dataObj.net_revenue}			
+			else
+				div No report available!
+
+		h2 Sales Details
+
+		div#salesReport
+			span Book sales by
+			select#searchCategory
+					option Title
+					option Author
+					option Genre 
+			button#salesReportButton(type="button" onclick="getSalesReport()") Search
+
+		br
+
+		div#salesReportTable(hidden="true")
+
+
+		script(src="/bookstoreClient.js")

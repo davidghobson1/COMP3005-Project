@@ -1,0 +1,32 @@
+html
+	head
+		title Book Search
+
+	body
+		h1 Search for Books!
+
+		p
+			select#searchCategory
+				option Title
+				option Author
+				option Genre 
+				option ISBN
+				option Vendor ID
+			input#searchbar(type="text")
+			button#searchButton(type="button" onclick="searchBooks()") Search!
+
+		h2#matchingBooksHeader(hidden="true") Matching Books
+
+		div#books
+
+		br
+
+		button#addToBasket(type="button" onclick="addToBasketBooks()" hidden="true") Add to Basket!
+		
+		br
+
+		br
+
+		button#viewBasket(type="button" onclick="viewBasket()") View Basket
+
+		script(src="/bookstoreClient.js")

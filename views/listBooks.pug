@@ -1,0 +1,11 @@
+if books.length != 0
+	each bookObj in books
+		-let discontinued = (bookObj.stock != null)
+		if discontinued
+			-let text = bookObj.title + " by " + bookObj.author + " (" + bookObj.description + ")"
+			div#text
+				input(type="checkbox")
+				a(href = "/store/book/" + bookObj.book_id) !{text}
+				span(hidden="true") #{bookObj.book_id}
+else
+	div No books found!

@@ -1,0 +1,12 @@
+if orders.length != 0
+	each orderObj in orders
+		-let id_name = "order" + orderObj.order_number
+		div(id = id_name)
+			u Order #{orderObj.order_number}
+			li Shipping company: #{orderObj.shipping_company_name}
+			li Shipping tracking number: #{orderObj.tracking_number}
+			li Shipping status: #{orderObj.shipping_status}
+			br
+			br
+else
+	div No order found!

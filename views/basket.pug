@@ -1,0 +1,60 @@
+html
+	head
+		title Your Basket
+
+	body
+		h2 Your Basket
+
+if books.length != 0
+	div#basket
+		-let total = 0;
+		-let num_of_books = 0;
+		div#books
+			each bookObj in books
+				-let s = bookObj.book_id;
+				div(id=s)
+					-let text = bookObj.title + " by " + bookObj.author + " (" + bookObj.description + ")"
+					-let cost = bookObj.price* bookObj.quantity;
+					-total += cost;
+					div(id=text)
+						input(type="checkbox")
+						a(href = "/book/" + bookObj.book_id) !{text}
+						span(hidden="true") #{bookObj.book_id}
+					div Price: #{bookObj.price} 
+					div Qty. 
+						-let q = "Qty." + s;
+						- num_of_books += bookObj.quantity
+						span(id=q) #{bookObj.quantity}
+					div Subtotal: $
+						-let c = "Cost." + s;
+						span(id=c) #{cost}
+
+		br
+
+		div Number of books: 
+			span#num_of_books #{num_of_books}
+
+		- let tax = total*0.13
+
+		div Total: $ #{Math.round(total*100)/100}
+
+		br
+
+		div Tax (13%): $ #{Math.round(tax*100)/100}
+
+		div Grand Total: $ 
+			span#grand_total #{Math.round((total+tax)*100)/100}
+
+	br
+
+	button#checkoutButton(type="button" onclick="checkout()") Checkout
+
+	div#login(hidden="true")
+
+	div#checkoutInfo(hidden="true")
+
+	script(src="/bookstoreClient.js")
+
+else
+	div No books found!
+
