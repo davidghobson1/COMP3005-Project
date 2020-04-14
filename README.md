@@ -3,7 +3,7 @@ Web-based application for the LookInnaBook online bookstore
 
 This app is based on Node.js and Express, and uses Node's pg-promise package to connect to Postgres.
 
-To use the app, make sure you have all files including the package.json file in the same directory. Navigate to the directory in the command line and run "npm install". This should automatically download all the dependencies you need to run the app.
+To use the app, make sure you have all files including the package.json file in the same directory (and also that you have Node.js on installed on your computer). Navigate to the directory in the command line and run "npm install". This should automatically download all the dependencies you need to run the app.
 
 An important note: to use the app, Express has to connect to Postgres. To allow this to happen, first, make sure your Postgres server is running! But also, open the postgres.js file in the /public directory, and on line 6, where it says:
 
