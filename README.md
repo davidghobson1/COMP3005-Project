@@ -1,4 +1,4 @@
-# COMP3005-Project
+# LookINNABook Bookstore Application
 Web-based application for the LookInnaBook online bookstore
 
 This app is based on Node.js and Express, and uses Node's pg-promise package to connect to Postgres.
