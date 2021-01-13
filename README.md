@@ -1,5 +1,5 @@
 # LookINNABook Bookstore Application
-Web-based application for the LookInnaBook online bookstore
+A web-based application for an online bookstore based on a custom-built SQL database.
 
 This app is based on Node.js and Express, and uses Node's pg-promise package to connect to Postgres.
 
